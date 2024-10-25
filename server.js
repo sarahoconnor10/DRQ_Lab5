@@ -4,6 +4,8 @@ const port = 4000;
 
 // '/' -> localhost
 // req = request, res = response
+// listens for http requests
+
 app.get('/', (req, res) => {
     res.send('Hello World :]');
 });
@@ -43,8 +45,8 @@ app.get('/api/movies', (req, res) => {
             "Poster": "https://example.com/poster3.jpg"
         }
     ];
-    res.status(201).json({ movies });
-    res.json({ movies });
+    res.status(200).json({ myMovies:movies });
+    // res.json({ movies });
 });
 
 app.use((err, req, res, next) => {
